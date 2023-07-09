@@ -1,0 +1,43 @@
+html * {
+	font-family: Baskerville;
+	line-height: 1.5;
+}
+body {
+	background-color: #ECECEC
+}
+h1 {
+	font-size: 30px
+}
+h2 {
+	font-size: 20px
+}
+p {
+	font-size: 14px
+}
+.navbar {
+	background-color: #280628;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	width: 100%
+}
+.navbar a {
+	float: left;
+	display: block;
+	color: white;
+	padding: 12px 20px;
+	text-align: center;
+	font-size: 14px
+}
+.navbar a:hover {
+	background-color: #FFECEC;
+	color: #440044
+}
+.navbar a:active {
+	background-color: #D88080;
+	color: white
+}
+main {
+	padding: 20px;
+	margin-bottom: 30px
+}
