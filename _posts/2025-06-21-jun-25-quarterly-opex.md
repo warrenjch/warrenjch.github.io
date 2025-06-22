@@ -19,15 +19,7 @@ I plan to structure most of my quarterly opex posts in the following fashion: so
 - [Random thoughts](#random-thoughts){: .page-link}
     - [Gambling society I](#gambling-society-i){: .page-link}
     - [AI and the "smell"](#ai-and-the-smell){: .page-link}
-    - [Signaling](#signaling){: .page-link}
-    - [Music](#music){: .page-link}
-- [Finance](#finance){: .page-link}
-    - [Gambling society II](#gambling-society-ii){: .page-link}
-    - [Ipad kids](#ipad-kids){: .page-link}
-    - [Unreasonably good backtests](#unreasonably-good-backtests){: .page-link}
-    - [Price sensitive](#price-sensitive){: .page-link}
-    - [Polymarket Jesus](#polymarket-jesus){: .page-link}
-    - [Things I've been working on](#things-ive-been-working-on){: .page-link}
+
 
 
 ## Math
@@ -94,13 +86,13 @@ There is also the issue of a gambling culture. This is harder to quantify, but I
 
 People gamble on negative EV outcomes for two reasons. The one we are talking about now is that they don't have perfect information and think that the EV is actually positive. If you think you have skill at picking the next crypto 10000x-er, or highly shorted stock poised for a GME style squeeze, or in putting on sports parlays, the only feedback you get from this process is the outcome (+/-PNL). If your prior distribution of your own skill is extremely skewed to "I am highly skilled at this", then you are not going to stop betting because you lost a few times in a row. You probably also don't give a shit about Bayes' theorem and overweight positive evidence in favor of you having "skill". In short, if you model gambling as a random walk with drift for most people, the reason most people start (under our current assumptions) is that they think their drift is positive, and once they start they don't stop because they don't know how to / don't care to evaluate whether their random walk has positive or negative drift.
 
-This is simplistic too because there are other motivations for gambling. Peer pressure is one of them. You get peer pressured by people you see online who struck it big. We didn't have this problem before social media.
+This is still being simplistic because there are other motivations for gambling. Peer pressure is one of them. You get peer pressured by people you see online who struck it big. We didn't have this problem before social media.
 
 The funny thing is that we have a risk-averse culture in most parts of the world, and yet this is the one thing everyone seems to be risk-taking on. Because most actions with convex, risky payouts require work, and gambling is easy. Of course there are people taking the convex risky bets (like making a startup). I'll talk about them in the next section.
 
 The last bit of the "why", I think, has to deal with existential dread. Everything feels out of reach, and more so with AI. What's the point if actually trying to work towards something offers little upside? This is a doomer viewpoint, but I think a sufficient number of people are starting to buy into this idea, and a good number of them are by no means "stupid".
 
-And thus we come to the topic of <i>scam theory</i>. It's just a dumb name for the fact that the worst, scammiest, dumbest sounding names in the equity space have all seemed to outperform spectacularly over the past months to a year. It was especially apparent during the post-liberation day rally. While funds were net short and every macro person was calling for risk-off, retail names like PLTR, CRWV, and CRCL just kept going up. RGC makes quack traditional Chinese medicine, has never turned a profit in its history, and its stock went up 600x in a year. I think if we are to believe that the endgame for the dollar based world is to inflate their way out of their mess, then there is merit to buying the most fundamentally unsound companies that have captured retail interest and pump the hell out of them.
+This motivates the idea of <i>scam theory</i>. It's just a dumb name for the fact that the worst, scammiest, dumbest sounding names in the equity space have all seemed to outperform spectacularly over the past months to a year. It was especially apparent during the post-liberation day rally. While funds were net short and every macro person was calling for risk-off, retail names like PLTR, CRWV, and CRCL just kept going up. RGC makes quack traditional Chinese medicine, has never turned a profit in its history, and its stock went up 600x in a year. I think if we are to believe that the endgame for the dollar based world is to inflate their way out of their mess, then there is merit to buying the most fundamentally unsound companies that have captured retail interest and pump the hell out of them.
 
 Everyone looks at historical bubbles and comes to the conclusion that you should not be investing in a speculative bubble. I think that the opposite is true. Obviously this is not financial advice, but you should absolutely be investing during a speculative bubble, and in the most leveraged retail-heavy names, because that's upside convexity. The worst thing that can happen is that everything crashes all at once, but the default assumption is that stocks keep going up and in the case of these stocks, you have a very long right tail. It's free convexity for delta-1 investors. When everyone wants tulips, and the left tail is priced richly since people know what happened to bubbles in the past, you can buy tulips and put spreads.
 
@@ -118,33 +110,10 @@ This brings me to the topic of techbros. There's this trope of young, visually s
 
 A few observations on this:
 1. I want to single out Cluely as the one that annoys me the most, because its founders [<u>keep</u>](https://x.com/benaratame/status/1936198119622164668){: .page-link} [<u>posting</u>](https://x.com/cluely/status/1932969921086115860){: .page-link} [<u>this</u>](https://x.com/im_roy_lee/status/1936138361011585190){: .page-link} [<u>kind</u>](https://x.com/benaratame/status/1934345585232154993){: .page-link} [<u>of</u>](https://x.com/benaratame/status/1934009291129880899){: .page-link} [<u>shit</u>](https://x.com/benaratame/status/1933787207011348580){: .page-link}. It's so intentional and insufferable. The worst thing is that everyone in the startup sphere seems to post and behave like this.
-2. There is something to derive from their branding of going <b>viral</b>, which is that the endgame is clearly not to be profitable for most startups. The endgame is to go more and more rounds of funding before getting bought out, or better, going public via a SPAC. To do that, you first need a crazy marketing strategy to cover up the "smell". It's perfectly legitimate but it's a twisted way of doing capitalism.
+2. There is something to derive from their branding of going <b>viral</b>, which is that the endgame is clearly not to be profitable for most startups. The endgame is to get more and more rounds of funding before getting bought out, or better, going public via a SPAC. To do that, you first need a crazy marketing strategy to cover up the "smell". It's perfectly legitimate but it's a twisted way of doing capitalism.
 3. I call this a "trade" because we can analyze it from the perspective of payoffs. More and more smart people are funneling themselves into this sinkhole with infinite money at the center. But it's not really infinite money. At some point the user infra for AI will be built out and it will probably be done by the same players who are actually making the big LLMs. All the startups that are currently piggybacking on this wave are bidding for a call option on something where the right tail is getting smaller and smaller.
 4. From a utility point of view, it makes no sense to go all in on this kind of stuff for a normal person, ie. dropping out and playing the startup game. It makes no sense to go all in on anything that's not near certain really. But there is a lot of self selection here and I suppose most of the people who are able to play this game in the first place have some kind of safety net in place (privilege).
 
-I think it would be a better world in which these people ended up in consulting and finance, because the point of those industries (the client facing part at least) is to cover up the "smell" and bluff your way through. It feels odd to see this being applied to a somewhat serious industry. At least that's one real world application of scam theory.
+I think it would be a better world in which these people ended up in consulting and finance, because the point of those industries (the client facing part at least) is to cover up the "smell" and bluff your way through. It feels odd to see this being applied to a somewhat serious industry. At least that's one real world application of scam theory: the flip side of Buffett's claim, which is that when the tides are high you can go swim naked.
 
-### Signaling
-NS, AI and schools as signaling, slatestarcodex school piece, frontrunning and involution
-
-### Music
-the types of music listeners, non english music, why i cant work with music that has lyrics, listening to "mid" music
-
-## Finance
-
-### Gambling society II
-friedman-savage utility, risk neutral pricing, why gambling society only works with capitalism
-
-### Ipad kids
-risk reversals
-
-### Unreasonably good backtests
-VX model, peso problem, toxic risk
-
-### Price sensitive
-how to get the fair price if the market is "fair" under risk neutrality
-
-### Polymarket Jesus
-
-### Things I've been working on
-CRWV chart, problem with BS pricing
+### This is a preview to test that the Mathjax and image links are working.
