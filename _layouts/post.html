@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.categories.size > 0 %}
+        • {{ page.categories | join: ", " }}
+      {% endif %}
+    </p>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<style>
+.page-content,
+.wrapper,
+main {
+  max-width: none !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box !important;
+}
+
+.post {
+  max-width: calc(100vw - 4rem) !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  width: 80% !important;
+  box-sizing: border-box !important;
+}
+
+.post-content,
+.post-header {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body {
+  max-width: none !important;
+}
+</style>

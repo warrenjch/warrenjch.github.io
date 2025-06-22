@@ -1,0 +1,209 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+$newsreader-font-family: 'Newsreader', 'Georgia', 'Times New Roman', serif;
+$fallback-font-family: 'Georgia', 'Times New Roman', serif;
+
+$newsreader-heading-family: 'Newsreader', 'Arial', 'Helvetica', sans-serif;
+$fallback-heading-family: 'Arial', 'Helvetica', sans-serif;
+
+$base-font-size: 18px;
+$base-line-height: 1.6;
+$primary-color: #2c3e50;
+$secondary-color: #9225c4;
+$background-color: #ffffff;
+$text-color: #333333;
+$content-width: 800px;
+$spacing-unit: 30px;
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  background-color: $background-color;
+  
+  font-family: $newsreader-font-family;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  
+  &.old-site-page {
+    font-family: $fallback-font-family;
+  }
+  
+  &.MathJax {
+    font-family: "MathJax_Main", "Times New Roman", serif !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primary-color;
+  margin-top: $spacing-unit;
+  margin-bottom: calc($spacing-unit / 2);
+
+  font-family: $newsreader-heading-family;
+  
+  body.old-site-page & {
+    font-family: $fallback-heading-family;
+  }
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+button, input, select, textarea, 
+.interactive-element, [class*="js-"] {
+  font-family: $newsreader-font-family !important;
+  line-height: 1.2 !important;
+  padding-top: 1em !important;
+  padding-bottom: 0.9em !important;
+  box-sizing: border-box !important;
+  
+  &.old-site-page {
+    font-family: $fallback-font-family;
+  }
+}
+
+.tag-filter button {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: auto !important;
+  max-width: fit-content !important;
+  flex: none !important;
+  padding: 0.3em 0.8em !important;
+  margin: 0.2em !important;
+  white-space: nowrap !important;
+}
+.tag-filters {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5em !important;
+  align-items: flex-start !important;
+}
+
+// Layout
+.wrapper {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 calc($spacing-unit / 2);;
+}
+
+// Header
+.site-header {
+  border-bottom: 1px solid #e8e8e8;
+  padding: calc($spacing-unit / 2) 0;;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  background: linear-gradient(135deg, $secondary-color 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+}
+
+// Navigation
+.site-nav {
+  float: right;
+  display: flex;
+  align-items: center;
+  
+  .trigger {
+    display: flex;
+    align-items: center;
+  }
+  .page-link {
+    margin-left: 20px !important;
+    text-decoration: none !important;
+    color: $text-color !important;
+    padding-top: 1px !important;
+    
+    &:hover {
+      color: $secondary-color !important;
+    }
+  }
+}
+
+
+// Posts
+.post-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.post-tag {
+  font-style: italic;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.post-content {
+  margin-top: $spacing-unit;
+}
+
+.page-link {
+  text-decoration: none;
+  color: $primary-color;
+  
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.MathJax {
+  font-family: "MathJax_Main", "Times New Roman", serif !important;
+  font-size: inherit !important;
+}
+
+.MathJax_Display {
+  font-family: "MathJax_Main", "Times New Roman", serif !important;
+}
+
+
+// Footer
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  margin-top: $spacing-unit;
+  padding: $spacing-unit 0;
+  background-color: #f8f9fa;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// Responsive design
+@media screen and (max-width: 600px) {
+  .site-nav {
+    float: none;
+    margin-top: 1px;
+  }
+  
+  .page-link {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}

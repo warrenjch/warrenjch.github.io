@@ -1,0 +1,572 @@
+---
+layout: default
+---
+<div class="hero-section">
+  <h1>{{ site.title | default: "Warren's Blog" }}</h1>
+  <p class="hero-description">{{ site.description }}</p>
+</div>
+
+<div class="home-wide">
+  <div class="main-content">
+    <!-- Posts Section (Left/Center) -->
+    <div class="posts-section">
+      <div class="posts-header">
+        <h2>Posts</h2>
+        <div class="posts-count">
+          <span id="showing-count">{{ site.posts.size }}</span> of {{ site.posts.size }} posts
+        </div>
+      </div>
+
+      <div id="posts-container" class="posts-list">
+        {% for post in site.posts %}
+        <article class="post-card" data-tags="{{ post.tags | join: ' ' }}" data-title="{{ post.title | downcase }}" data-content="{{ post.content | strip_html | downcase }}">
+          <div class="post-date">
+            {{ post.date | date: "%b %d, %Y" }}
+          </div>
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+          {% endif %}
+          {% if post.tags.size > 0 %}
+          <div class="post-tags">
+            Tags: 
+            {% for tag in post.tags %}
+              <span class="post-tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+
+      <div id="no-results" class="no-results" style="display: none;">
+        <h3>No posts found</h3>
+        <p>Try adjusting your search terms or clearing the filters.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar (Right) -->
+    <div class="sidebar">
+      <div class="blog-controls">
+        <div class="search-container">
+          <label for="search-input">Search Posts</label>
+          <input type="text" id="search-input" placeholder="Search posts by title or content" />
+          <button id="clear-search" class="btn-clear">&times;</button>
+        </div>
+        
+        <div class="filter-container">
+          <div class="filter-header">
+            <h3>Filter by Tags</h3>
+            <button id="clear-filters" class="btn btn-outline">Clear All</button>
+          </div>
+          <div id="tag-filters" class="tag-filters">
+          </div>
+        </div>
+      </div>
+      <div class="old-site-links">
+        <a href="/old-site/" class="btn btn-secondary">Visit Old Site</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+.home-wide {
+  max-width: calc(100vw - 4rem);
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: none !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer .wrapper {
+  max-width: calc(100vw - 4rem) !important;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 0 0 3rem 0;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f9ffa9 0%, #e98ef7 100%);
+  color: white;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+  color:#2c3e50
+}
+
+.old-site-links {
+  margin-top: 2rem;
+  color:#2c3e50;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(255, 201, 201);
+  color: #ae2525;
+  transform: translateY(-2px);
+  border: 2px solid #ae2525;
+  box-shadow: 0px 8px 8px rgb(133, 0, 0);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #9225c4;
+  border: 2px solid #9225c4;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.btn-outline:hover {
+  background-color: #9225c4;
+  color: white;
+}
+
+/* Main content layout */
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Posts section */
+.posts-section {
+  min-height: 500px;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #9225c4;
+}
+
+.posts-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.posts-count {
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid #9225c4;
+}
+
+.post-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  border-left-color: #764ba2;
+}
+
+.post-date {
+  color: #9225c4;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.post-title {
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.post-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.post-title a:hover {
+  color: #9225c4;
+}
+
+.post-excerpt {
+  color: #495057;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.tag {
+  background: linear-gradient(135deg, #ee5bfe, #9225c4);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.blog-controls {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.search-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+  font-size: 1.2rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 1rem 2.5rem 1rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 2.25rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6c757d;
+  cursor: pointer;
+  display: none;
+}
+
+.btn-clear:hover {
+  color: #dc3545;
+}
+
+.filter-container {
+  border-top: 2px solid #e9ecef;
+  padding-top: 2rem;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filter-header h3 {
+  margin: 0;
+  color: #495057;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tag-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tag-filter {
+  padding: 0.75rem 1rem;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.tag-filter:hover {
+  background-color: #dee2e6;
+  transform: translateX(5px);
+}
+
+.tag-filter.active {
+  background: linear-gradient(135deg, #ee5bfe, #9225c4);
+  color: white;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6c757d;
+}
+
+.no-results h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .main-content {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+@media (max-width: 968px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sidebar {
+    position: static;
+    order: -1;
+  }
+  
+  .tag-filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .tag-filter {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-wide {
+    padding: 1rem;
+  }
+  
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  
+  .posts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .blog-controls {
+    padding: 1.5rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const clearSearchBtn = document.getElementById('clear-search');
+  const clearFiltersBtn = document.getElementById('clear-filters');
+  const tagFiltersContainer = document.getElementById('tag-filters');
+  const postsContainer = document.getElementById('posts-container');
+  const noResults = document.getElementById('no-results');
+  const showingCount = document.getElementById('showing-count');
+  
+  const allPosts = Array.from(document.querySelectorAll('.post-card'));
+  const allTags = new Set();
+  let activeFilters = new Set();
+  
+  // Collect all tags
+  allPosts.forEach(post => {
+    const tags = post.dataset.tags.split(' ').filter(tag => tag);
+    tags.forEach(tag => allTags.add(tag));
+  });
+  
+  // Create tag filter buttons
+  function createTagFilters() {
+    const sortedTags = Array.from(allTags).sort();
+    tagFiltersContainer.innerHTML = '';
+    
+    sortedTags.forEach(tag => {
+      const button = document.createElement('button');
+      button.className = 'tag-filter';
+      button.textContent = tag.replace(/-/g, ' ');
+      button.dataset.tag = tag;
+      
+      button.addEventListener('click', function() {
+        toggleTagFilter(tag, button);
+      });
+      
+      tagFiltersContainer.appendChild(button);
+    });
+  }
+  
+  // Toggle tag filter
+  function toggleTagFilter(tag, button) {
+    if (activeFilters.has(tag)) {
+      activeFilters.delete(tag);
+      button.classList.remove('active');
+    } else {
+      activeFilters.add(tag);
+      button.classList.add('active');
+    }
+    filterPosts();
+  }
+  
+  // Filter posts based on search and tags
+  function filterPosts() {
+    const searchTerm = searchInput.value.toLowerCase();
+    let visibleCount = 0;
+    
+    allPosts.forEach(post => {
+      const title = post.dataset.title;
+      const content = post.dataset.content;
+      const postTags = post.dataset.tags.split(' ').filter(tag => tag);
+      
+      // Check search match
+      const searchMatch = !searchTerm || 
+        title.includes(searchTerm) || 
+        content.includes(searchTerm);
+      
+      // Check tag match
+      const tagMatch = activeFilters.size === 0 || 
+        Array.from(activeFilters).every(filter => postTags.includes(filter));
+      
+      if (searchMatch && tagMatch) {
+        post.style.display = 'block';
+        visibleCount++;
+      } else {
+        post.style.display = 'none';
+      }
+    });
+    
+    // Update count and show/hide no results
+    showingCount.textContent = visibleCount;
+    
+    if (visibleCount === 0) {
+      noResults.style.display = 'block';
+      postsContainer.style.display = 'none';
+    } else {
+      noResults.style.display = 'none';
+      postsContainer.style.display = 'flex';
+    }
+    
+    // Show/hide clear search button
+    clearSearchBtn.style.display = searchTerm ? 'block' : 'none';
+  }
+  
+  // Event listeners
+  searchInput.addEventListener('input', filterPosts);
+  
+  clearSearchBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    filterPosts();
+  });
+  
+  clearFiltersBtn.addEventListener('click', function() {
+    activeFilters.clear();
+    document.querySelectorAll('.tag-filter').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    filterPosts();
+  });
+  
+  // Initialize
+  createTagFilters();
+  filterPosts();
+});
+</script>
