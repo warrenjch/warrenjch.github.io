@@ -22,6 +22,12 @@ layout: default
         <article class="post-card" data-tags="{{ post.tags | join: ' ' }}" data-title="{{ post.title | downcase }}" data-content="{{ post.content | strip_html | downcase }}">
           <div class="post-date">
             {{ post.date | date: "%b %d, %Y" }}
+            {% assign words = post.content | strip_html | number_of_words %}
+            {% assign reading_time = words | divided_by: 200 %}
+            {% if reading_time == 0 %}
+              {% assign reading_time = 1 %}
+            {% endif %}
+            • {{ reading_time }} min read
           </div>
           <h3 class="post-title">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
