@@ -23,9 +23,8 @@ I plan to structure most of my quarterly opex posts in the following fashion: so
     - [Music](#music){: .page-link}
 - [Finance](#finance){: .page-link}
     - [Gambling society II](#gambling-society-ii){: .page-link}
-    - [Ipad kids](#ipad-kids){: .page-link}
     - [Unreasonably good backtests](#unreasonably-good-backtests){: .page-link}
-    - [Price sensitive](#price-sensitive){: .page-link}
+    - [Ipad kids](#ipad-kids){: .page-link}
     - [Polymarket Jesus](#polymarket-jesus){: .page-link}
     - [Things I've been working on](#things-ive-been-working-on){: .page-link}
 - [Final thoughts](#final-thoughts){: .page-link}
