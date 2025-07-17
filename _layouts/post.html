@@ -10,12 +10,16 @@ layout: default
       {% if page.categories.size > 0 %}
         • {{ page.categories | join: ", " }}
       {% endif %}
-      {% assign words = content | strip_html | number_of_words %}
-      {% assign reading_time = words | divided_by: 200 %}
-      {% if reading_time == 0 %}
-        {% assign reading_time = 1 %}
+      {% if page.readingtime %}
+        • {{ page.readingtime }} min read
+      {% else %}
+        {% assign words = content | strip_html | number_of_words %}
+        {% assign reading_time = words | divided_by: 200 %}
+        {% if reading_time == 0 %}
+          {% assign reading_time = 1 %}
+        {% endif %}
+        • {{ reading_time }} min read
       {% endif %}
-      • {{ reading_time }} min read
     </p>
   </header>
 

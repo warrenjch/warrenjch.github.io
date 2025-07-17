@@ -82,15 +82,16 @@ button, input, select, textarea,
   }
 }
 
-.tag-filter button {
+.tag-filter {
   display: inline-block !important;
   width: auto !important;
   min-width: auto !important;
   max-width: fit-content !important;
   flex: none !important;
-  padding: 0.3em 0.8em !important;
+  padding: 0.5em 0.8em !important;
   margin: 0.2em !important;
   white-space: nowrap !important;
+  text-align: center !important;
 }
 .tag-filters {
   display: flex !important;
@@ -176,6 +177,18 @@ button, input, select, textarea,
   
   &:hover {
     color: $secondary-color;
+  }
+}
+
+.spoiler {
+  color: $primary-color;
+  background-color: $primary-color;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    color: $text-color;
+    background-color: $background-color;
   }
 }
 
