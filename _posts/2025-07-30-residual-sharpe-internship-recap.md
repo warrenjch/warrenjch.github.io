@@ -74,15 +74,18 @@ $$\begin{align*}
 \end{align*}$$
 
 We know $\hat{\beta} = \frac{s_{AB}}{s_B^2}$ where $s_{AB}$ denotes the sample covariance, so
+
 $$\begin{align*}
 \sum \hat{\epsilon}_{i}^2 &= \sum \left(A_i - \bar{A} - \frac{s_{AB}}{s_B^2}\left(B_i - \bar{B}\right)\right)^2 \\
 &= \left(n-1\right)s_A^2 + \frac{s_{AB}^2}{s_B^4}\left(n-1\right)s_B^2 - 2\frac{s_{AB}}{s_B^2}\left(n-1\right)s_{AB} \\
 &= \left(n-1\right)s_A^2\left(1-r^2\right) \\
 \hat{\sigma}_{\epsilon}^2 &= \frac{\left(n-1\right)s_A^2\left(1-r^2\right)}{n-2}
 \end{align*}$$
+
 since we fitted two parameters $\alpha$ and $\beta$, leaving us with $n-2$ degrees of freedom.
 
 Now putting it back into the expression of $t$:
+
 $$\begin{align*}
 t = \frac{\hat{\beta}}{\frac{\hat{\sigma}_{\epsilon}}{\sqrt{(n-1)s_B^2}}} &= \frac{\frac{s_{AB}}{s_B^2}\sqrt{(n-1)s_B^2}}{\sqrt{\frac{\left(n-1\right)s_A^2\left(1-r^2\right)}{n-2}}} \\
 &= \frac{s_{AB}}{s_A s_B} \sqrt{\frac{n-2}{1-r^2}} \\
