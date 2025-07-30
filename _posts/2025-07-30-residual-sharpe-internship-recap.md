@@ -2,6 +2,7 @@
 layout: post
 title: "Residual Sharpe - Internship Recap"
 date: 2025-07-30
+readingtime: 10
 tags: [finance, math, 2025]
 excerpt: Derivations of useful properties involving t-stats
 ---
