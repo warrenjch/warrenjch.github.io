@@ -63,7 +63,7 @@ $$t_{\beta} = \frac{r\sqrt{n-2}}{\sqrt{1-r^2}}, \, r = \frac{t_{\beta}}{\sqrt{t^
 
 The latter is just the former but rearranged, so I will only prove the former. Earlier we assumed that we were working with the population level statistics for calculating Sharpe, but here I'll use sample statistics since actually our calculations are drawn from our dataset, which is a sample.
 
-First, the standard error of $t_{\beta}$ is $\frac{\hat{\sigma}_{\epsilon}}{\sqrt{(n-1)s_B^2}}$. Our goal is to first represent $\hat{\sigma}_{\epsilon}$ in terms of $r$ and find a way to get rid of $s_B$. From here I'll simplify $t_{\beta}$ to $t$.
+First, the standard error of $t\_{\beta}$ is $\frac{\hat{\sigma}\_{\epsilon}}{\sqrt{(n-1)s\_{B}^2}}$. Our goal is to first represent $\hat{\sigma}\_{\epsilon}$ in terms of $r$ and find a way to get rid of $s\_{B}$. From here I'll simplify $t\_{\beta}$ to $t$.
 
 From the regression we have that
 
