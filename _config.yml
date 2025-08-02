@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Opinion Expression
+title: OPinion EXpression
 description: >-
   A personal blog about math, money, music, and other miscellaneous thoughts
 baseurl: ""

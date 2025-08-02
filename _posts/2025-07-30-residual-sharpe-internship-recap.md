@@ -2,7 +2,7 @@
 layout: post
 title: "Residual Sharpe - Internship Recap"
 date: 2025-07-30
-readingtime: 11
+readingtime: 8
 tags: [finance, math, 2025]
 excerpt: Derivations of useful properties involving t-stats
 ---
@@ -19,7 +19,7 @@ In total I think I looked at 7 strategies, some seriously, and others as a mere 
 
 <small>Not alleging anything here, but I think there's also something to be learned: if it's too good to be true, it's either (most likely unintentional) p-hacking, it's luck, or you're getting paid for some kind of toxic risk. In this case, I think it's a combination of the former two.</small>
 
-I can't say much about what I did during these few months, but I learned a few interesting properties about t-stats along the way that I will prove below. T-stats are useful when you are trying to figure out how much alpha a strategy has over some other strategy or a benchmark. In the Sharpe world that's important because you can derive many things about how two return series relate to each other from the t-stats of a regression.
+During these few months I learned a few interesting properties about t-stats along the way that I will prove below. T-stats are useful when you are trying to figure out how much alpha a strategy has over some other strategy or a benchmark. In the Sharpe world that's important because you can derive many things about how two return series relate to each other from the t-stats of a regression.
 
 # Residual Sharpe
 
@@ -27,9 +27,7 @@ The first relation:
 $$S_{r} = \frac{t_{\alpha}}{\sqrt{T}}$$
 where the residual sharpe of one strategy over another is the t-stat of the constant term in the regression divided by the root of the number of years in the data.
 
-If we have two strategies $A$ and $B$, then after regressing we get $A = \alpha + \beta B + \epsilon$. The residual strategy is $A$ after hedging out its beta to $B$, which is $A - \beta B = \alpha + \epsilon$. Since we are looking for an annualized Sharpe, we need to normalize the $N$ datapoints: $S_r = \sqrt{\frac{N}{T}}\times\frac{E[A - \beta B]}{\text{std}(A- \beta B)} = \sqrt{\frac{N}{T}}\times\frac{\alpha}{\sigma_{\epsilon}}$.
-
-Since $t_{\alpha} = \frac{\alpha}{\frac{\sigma_{\epsilon}}{\sqrt{N}}}$ we have that $S_r = \frac{t_{\alpha}}{\sqrt{T}}$.
+If we have two strategies $A$ and $B$, then after regressing we get $A = \alpha + \beta B + \epsilon$. The residual strategy is $A$ after hedging out its beta to $B$, which is $A - \beta B = \alpha + \epsilon$. Since we are looking for an annualized Sharpe, we need to normalize the $N$ datapoints: $S_r = \sqrt{\frac{N}{T}}\times\frac{E[A - \beta B]}{\text{std}(A- \beta B)} = \sqrt{\frac{N}{T}}\times\frac{\alpha}{\sigma_{\epsilon}}$. Since $t_{\alpha} = \frac{\alpha}{\frac{\sigma_{\epsilon}}{\sqrt{N}}}$ we have that $S_r = \frac{t_{\alpha}}{\sqrt{T}}$.
 
 The other relation, if you only know the correlation between $A$ and $B$, is:
 
