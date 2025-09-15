@@ -26,9 +26,11 @@ $$\begin{align*}
 & g(t,x) \in C^2([0,\infty) \times \mathbb{R})\\
 & Y_t  = g(t, X_t)
 \end{align*}$$
+
 $$\text{Then } dY_t = \frac{\partial g}{\partial t}(t, X_t)dt + \frac{\partial g}{\partial x}(t, X_t)dX_t + \frac{1}{2}\frac{\partial^2 g}{\partial x^2}(t, X_t) \cdot (dX_t)^2$$
 
 From here we can easily apply it to the stock price $S_t$, which we model as a geometric Brownian motion by:
+
 $$dS_t = S_t(\mu dt + \sigma dB_t)$$
 
 We know this means that the log of the prices follows a normal Brownian motion with drift, so we apply It&ocirc;'s formula:
