@@ -44,7 +44,7 @@ d(g(S_t)) &= \frac{1}{S_t}dS_t - \frac{1}{2S_t^2} S_t^2 (\mu dt + \sigma dB_t)^2
 S_t &= S_0\exp((\mu - \frac{1}{2}\sigma^2)t + \sigma B_t)
 \end{align*}$$
 
-From here we can read off that $\mathbb{E}\left[\frac{S_t}{S_0}\right] = (\mu - \frac{1}{2}\sigma^2)t$, meaning that the geometric mean or the expected increment to the log return <i>per unit time</i> is going to be $\mu - \frac{1}{2}\sigma^2$.
+From here we can read off that $\mathbb{E}\left[\ln \frac{S_t}{S_0}\right] = (\mu - \frac{1}{2}\sigma^2)t$, meaning that the geometric mean or the expected increment to the log return <i>per unit time</i> is going to be $\mu - \frac{1}{2}\sigma^2$.
 
 # It&ocirc; vs Stratonovich integrals
 
@@ -58,9 +58,9 @@ $$\begin{align*}
 S_t(\mu dt + \sigma \circ dB_t) &= \left(\mu S + \frac{1}{2}(\sigma S)\sigma\right)dt + \sigma S_t dB_t\\
 \end{align*}$$
 
-From the first section we can substitute $\mu$ with $\mu + \frac{1}{2}\sigma^2$ to see that the expected geometric return is $\mu$, and the variance drain term has disappeared. So which method is correct here?
+From the first section we can substitute $\mu$ with $\mu + \frac{1}{2}\sigma^2$ to see that the expected geometric return when we formulate $S_t$ this way is $\mu$, and the variance drain term has disappeared. So which method is correct here?
 
-It turns out that the trick that creates this "contradiction" lies in a small abuse of notation. Since we can use the chain rule for Stratonovich integrals, we can simply write:
+It turns out that the trick that creates this "contradiction" lies in a small abuse of notation. Since we can use the chain rule for Stratonovich integrals, we can alternatively write:
 
 $$\begin{align*}
 d(\ln(S_t)) &= \frac{1}{S_t}dS_t\\
