@@ -192,6 +192,13 @@ button, input, select, textarea,
   }
 }
 
+blockquote {
+  border-left: 4px solid $secondary-color;
+  margin: 1em 0;
+  padding-left: 1em;
+  background-color: mix(white, $secondary-color, 90%);
+}
+
 .MathJax {
   font-family: "MathJax_Main", "Times New Roman", serif !important;
   font-size: inherit !important;
