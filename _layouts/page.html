@@ -39,4 +39,24 @@ main {
 body {
   max-width: none !important;
 }
+
+@media (max-width: 767px) {
+  .page,
+  .post {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1rem !important;
+  }
+
+  .page-content img,
+  .post-content img {
+    max-width: 100% !important; /* override inline 70% on phones */
+    min-width: 280px;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+  }
+}
+
+
 </style>
