@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sep 25 Quarterly Opex"
-date: 2025-09-22
+date: 2025-09-25
 tags: [quarterly-opex, 2025]
 excerpt: Jul-Sep 25 wrap
 ---
