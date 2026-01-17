@@ -22,15 +22,23 @@ layout: default
         <article class="post-card" data-tags="{{ post.tags | join: ' ' }}" data-title="{{ post.title | downcase }}" data-content="{{ post.content | strip_html | downcase }}">
           <div class="post-date">
             {{ post.date | date: "%b %d, %Y" }}
+            
             {% if post.readingtime %}
-              • {{ post.readingtime }} min read
+              {% assign total_minutes = post.readingtime %}
             {% else %}
               {% assign words = post.content | strip_html | number_of_words %}
-              {% assign reading_time = words | divided_by: 200 %}
-              {% if reading_time == 0 %}
-                {% assign reading_time = 1 %}
-              {% endif %}
-              • {{ reading_time }} min read
+              {% assign total_minutes = words | divided_by: 200 %}
+              {% if total_minutes == 0 %}{% assign total_minutes = 1 %}{% endif %}
+            {% endif %}
+
+            {% assign hours = total_minutes | divided_by: 60 %}
+            {% assign minutes = total_minutes | modulo: 60 %}
+
+            • 
+            {% if hours > 0 %}
+              {{ hours }} hr {{ minutes }} min read
+            {% else %}
+              {{ total_minutes }} min read
             {% endif %}
           </div>
           <h3 class="post-title">
