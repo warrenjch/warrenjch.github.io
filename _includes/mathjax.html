@@ -1,16 +1,35 @@
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
-    chtml: {
-      scale: 1.1,
-      fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2'
+    TeX: {
+      equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
     }
-  };
+  });
 </script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    var content = document.querySelector('.post-content') || document.body;
+
+    var html = content.innerHTML;
+    
+    content.innerHTML = html.replace(/\$([^\$]+)\$/g, function(match, inner) {
+      if (inner.indexOf('<em>') !== -1 || inner.indexOf('</em>') !== -1) {
+        var fixed = inner.replace(/<\/?em>/g, '_');
+        return '$' + fixed + '$';
+      }
+      return match;
+    });
+  });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>

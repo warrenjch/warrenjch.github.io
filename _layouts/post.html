@@ -11,14 +11,21 @@ layout: default
         • {{ page.categories | join: ", " }}
       {% endif %}
       {% if page.readingtime %}
-        • {{ page.readingtime }} min read
+        {% assign total_minutes = page.readingtime %}
       {% else %}
         {% assign words = content | strip_html | number_of_words %}
-        {% assign reading_time = words | divided_by: 200 %}
-        {% if reading_time == 0 %}
-          {% assign reading_time = 1 %}
-        {% endif %}
-        • {{ reading_time }} min read
+        {% assign total_minutes = words | divided_by: 200 %}
+        {% if total_minutes == 0 %}{% assign total_minutes = 1 %}{% endif %}
+      {% endif %}
+
+      {% assign hours = total_minutes | divided_by: 60 %}
+      {% assign minutes = total_minutes | modulo: 60 %}
+
+      • 
+      {% if hours > 0 %}
+        {{ hours }} hr {{ minutes }} min read
+      {% else %}
+        {{ total_minutes }} min read
       {% endif %}
     </p>
   </header>
