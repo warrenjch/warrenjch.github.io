@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# About the blog
+## About the blog
 
 Opinion Expiration is written by Warren Jin.
 
@@ -14,7 +14,7 @@ The problem was that with the layout of that site, it was difficult for me to ju
 
 I also aim to write a summary post every 3 months because that is a good amount of time to reflect on the things I have thought about and to condense them into prose. Because it happens every quarter, it will be called the quarterly opex.
 
-# About me
+## About me
 
 I am quite fond of using options to express degenerate bets.
 
