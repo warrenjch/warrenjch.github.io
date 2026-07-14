@@ -6,7 +6,7 @@ tags: [quarterly-opex, 2025]
 excerpt: Oct-Dec 25 wrap
 ---
 
-# Introduction
+## Introduction
 
 This edition of the quarterly opex came a bit late, partly because I was traveling and wanted to include a full account of everything that happened during my travels, and also partly because I was revising for collections at the same time. I started writing this in Sofia, and finished writing this in Oxford after my collections; prior to this I had departed from Oxford for London, stayed in Paris for a few days, went skiing in the French Alps, crashed a friend's house in Menton for a week, then I flew to Bucharest on Christmas and trundled my way down south to Sofia and finally to Athens. I talk about my observations in detail below.
 

@@ -21,7 +21,7 @@ In total I think I looked at 7 strategies, some seriously, and others as a mere 
 
 During these few months I learned a few interesting properties about t-stats along the way that I will prove below. T-stats are useful when you are trying to figure out how much alpha a strategy has over some other strategy or a benchmark. In the Sharpe world that's important because you can derive many things about how two return series relate to each other from the t-stats of a regression.
 
-# Residual Sharpe
+## Residual Sharpe
 
 The first relation:
 $$S_{r} = \frac{t_{\alpha}}{\sqrt{T}}$$
@@ -53,7 +53,7 @@ Combining the two, we get $S_r = \frac{S_A - \rho S_B}{\sqrt{1 - \rho^2}}$.
 
 The second formula, translated into English, is essentially saying that the residual sharpe is given by hedging away as much $B$ as is required to make $A$ uncorrelated to it, and then using the part of the regression that can't be explained by $B$ to determine how volatile this hedged asset is; which quite neatly lines up with our idea of what "residual sharpe" should intuitively mean.
 
-# Correlation from t-stats
+## Correlation from t-stats
 
 We have formulas linking the t-stats and residual sharpe, as well as correlation and residual sharpe. The next equation will link t-stats to correlation. A crucial difference, however, is that previously we were looking at $t_\alpha$ whereas now we will use $t_\beta$. If we have $N$ datapoints in our dataset, then:
 

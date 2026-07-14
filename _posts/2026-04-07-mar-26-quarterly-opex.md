@@ -6,7 +6,7 @@ tags: [quarterly-opex, 2026]
 excerpt: Jan-Mar 26 wrap
 ---
 
-# Introduction
+## Introduction
 
 > <i>For then she bare a son, of many shifts, blandly cunning, a robber, a cattle driver, a bringer of dreams, a watcher by night, a thief at the gates, one who was soon to show forth wonderful deeds among the deathless gods. Born with the dawning, at mid-day he played on the lyre, and in the evening he stole the cattle of far-shooting Apollon on the fourth day of the month; for on that day queenly Maia bare him.</i>
 

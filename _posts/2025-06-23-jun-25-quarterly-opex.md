@@ -6,7 +6,7 @@ tags: [quarterly-opex, 2025]
 excerpt: Apr-Jun 25 wrap
 ---
 
-# Introduction
+## Introduction
 
 This is the first of what I hope to be many posts, because I have a tendency to start doing things and stop doing them after a month or so when I get tired of it. I plan to do this every 3 months, and in between I also hope to post things if I find them particularly interesting (interesting enough to spend time writing about). Refer to the about page for why I started writing this stuff.
 

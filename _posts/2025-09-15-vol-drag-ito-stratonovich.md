@@ -7,7 +7,7 @@ tags: [finance, math, 2025]
 excerpt: Why does it seem to exist under one and not the other?
 ---
 
-# Deriving Variance Drain
+## Deriving Variance Drain
 
 When I ended my internship back in July I set myself the very unrealistic goal of finishing &Oslash;ksendal's <i>Stochastic Differential Equations</i> before university started and unfortunately, I massively overestimated my comprehension speed and underestimated the amount of Rudin I had to brush up on. With 75% of my 2 month break gone I have only finished 4 out of the 12 chapters, though some chapters near the end are less conceptual and more application based, which would hopefully prove to be less dense than the first few chapters.
 
@@ -46,7 +46,7 @@ S_t &= S_0\exp((\mu - \frac{1}{2}\sigma^2)t + \sigma B_t)
 
 From here we can read off that $\mathbb{E}\left[\ln \frac{S_t}{S_0}\right] = (\mu - \frac{1}{2}\sigma^2)t$, meaning that the geometric mean or the expected increment to the log return <i>per unit time</i> is going to be $\mu - \frac{1}{2}\sigma^2$.
 
-# It&ocirc; vs Stratonovich integrals
+## It&ocirc; vs Stratonovich integrals
 
 A more interesting question is why, despite there being multiple "valid" interpretations of what "$\int f\,dB_s$" is supposed to mean, we mostly only use the It&ocirc; integral in financial contexts. Consider if we formulate $S_t$ with the Stratonovich definition instead:
 

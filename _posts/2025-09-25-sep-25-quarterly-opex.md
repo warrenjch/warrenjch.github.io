@@ -6,7 +6,7 @@ tags: [quarterly-opex, 2025]
 excerpt: Jul-Sep 25 wrap
 ---
 
-# Introduction
+## Introduction
 
 Over the past 3 months many things have happened:
 <ol>
