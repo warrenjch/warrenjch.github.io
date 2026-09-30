@@ -42,7 +42,11 @@ layout: default
             {% endif %}
           </div>
           <h3 class="post-title">
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% if post.external_url %}
+              <a href="{{ post.external_url }}">{{ post.title }}</a>
+            {% else %}
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            {% endif %}
           </h3>
           {% if post.excerpt %}
           <div class="post-excerpt">
@@ -485,6 +489,11 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const allPosts = Array.from(document.querySelectorAll('.post-card'));
   const allTags = new Set();
+  const tagDisplayNames = {
+    ai: 'AI',
+    lesswrong: 'LessWrong',
+    external: 'External'
+  };
   let activeFilters = new Set();
   
   // Collect all tags
@@ -501,7 +510,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sortedTags.forEach(tag => {
       const button = document.createElement('button');
       button.className = 'tag-filter';
-      button.textContent = tag.replace(/-/g, ' ');
+      button.textContent = tagDisplayNames[tag] || tag.replace(/-/g, ' ');
       button.dataset.tag = tag;
       
       button.addEventListener('click', function() {
